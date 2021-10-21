@@ -6,7 +6,8 @@
                     <h1 class="text-lg uppercase font-semibold text-gray-700">
                         {{ $category->name }}
                     </h1>
-                    <a href="" class="text-indigo-500 ml-3 font-semibold hover:text-indigo-800 hover:underline">Ver
+                    <a href="{{ route('categorias-mostrar', $category) }}"
+                        class="text-indigo-500 ml-3 font-semibold hover:text-indigo-800 hover:underline">Ver
                         más</a>
                 </div>
 

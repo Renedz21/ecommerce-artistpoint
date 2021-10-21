@@ -69,7 +69,7 @@
 
                             <x-jet-dropdown-link href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    this.closest('form').submit();">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            this.closest('form').submit();">
                                 {{ __('Log Out') }}
                             </x-jet-dropdown-link>
                         </form>
@@ -110,7 +110,8 @@
                 <ul class="bg-white">
                     @foreach ($categoria as $item)
                         <li class="navigation-link text-gray-500 hover:bg-orange-500 hover:text-white hover:bg-red-400">
-                            <a href="" class="border-b py-3 px-5 text-xl flex items-center">
+                            <a href="{{ route('categorias-mostrar', $item) }}"
+                                class="border-b py-3 px-5 text-xl flex items-center">
 
                                 <span class="flex justify-center w-9">
                                     {!! $item->icon !!}
