@@ -26,3 +26,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 
 Route::get('products/{product}', [ProductsController::class, 'show'])->name('products.details');
+
+// Route::get('prueba', function () {
+//     \Cart::destroy();
+// });

@@ -3,15 +3,16 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
+use Gloudemans\Shoppingcart\Facades\Cart;
+use Illuminate\Support\Facades\Storage;
 
 class AddCartItemColor extends Component
 {
 
-    public $product, $colors;
+    public $product, $colors, $quantity;
     public $color_id = "";
 
     public $qty = 1;
-    public $quantity = 0;
 
     public function mount()
     {

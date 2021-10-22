@@ -21,7 +21,8 @@
                 wire:target='increment' wire:click='increment'>+</x-jet-secondary-button>
         </div>
         <div class="flex-1">
-            <x-jet-button x-bind:disabled="!$wire.quantity" class="w-full text-center justify-center bg-indigo-500">
+            <x-jet-button wire:click='addItem' wire:loading.attr='disabled' wire:target='addItem'
+                class="w-full text-center justify-center bg-indigo-500">
                 Agregar al carrito
             </x-jet-button>
         </div>
