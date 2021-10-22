@@ -17,11 +17,18 @@
 
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
 
+    {{-- flexslider --}}
+    <link rel="stylesheet" href="{{ asset('vendor/FlexSlider/flexslider.css') }}">
     @livewireStyles
 
     <!-- Scripts -->
     <script src="{{ mix('js/app.js') }}" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.js"></script>
+
+    <script src="{{ asset('vendor/FlexSlider/jquery.flexslider-min.js') }}"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 
 </head>
 

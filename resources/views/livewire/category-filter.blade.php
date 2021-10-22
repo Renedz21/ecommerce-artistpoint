@@ -59,7 +59,7 @@
 
                             <div class="px-6 py-4">
                                 <h1 class="text-lg font-semibold">
-                                    <a href="">
+                                    <a class="hover:text-indigo-500" href="{{ route('products.details', $item) }}">
                                         {{ Str::limit($item->name, 20) }}
                                     </a>
                                 </h1>
