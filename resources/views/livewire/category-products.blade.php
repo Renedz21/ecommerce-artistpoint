@@ -12,7 +12,7 @@
                             </figure>
                             <div class="py-4 px-6">
                                 <h1 class="text-lg font-semibold">
-                                    <a href="{{ route('products.details', $product->id) }}">
+                                    <a href="{{ route('products.details', $product) }}">
                                         {{ Str::limit($product->name, 20) }}
                                     </a>
                                 </h1>
