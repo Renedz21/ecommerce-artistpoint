@@ -31,7 +31,3 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 Route::get('shopping-cart', ShoppingCart::class)->name('carrito-compras');
 
 Route::get('products/{product}', [ProductsController::class, 'show'])->name('products.details');
-
-Route::get('prueba', function () {
-    \Cart::destroy();
-});
