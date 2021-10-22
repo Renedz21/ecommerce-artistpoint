@@ -20,7 +20,7 @@
         <div class="flex-1">
 
             <x-jet-button class="w-full text-center justify-center bg-indigo-500" wire:click='addItem'
-                wire:loading.attr='disabled' wire:click='addItem'>
+                wire:loading.attr='disabled' wire:target='addItem'>
                 Agregar al carrito
             </x-jet-button>
 

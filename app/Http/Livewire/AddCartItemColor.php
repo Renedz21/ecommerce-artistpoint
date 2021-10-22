@@ -9,24 +9,51 @@ use Illuminate\Support\Facades\Storage;
 class AddCartItemColor extends Component
 {
 
-    public $product, $colors, $quantity;
+    public $product, $colors;
+    public $options = [];
     public $color_id = "";
 
     public $qty = 1;
+    public $quantity = 0;
 
     public function mount()
     {
         $this->colors = $this->product->colors;
-        $this->quantity = $this->product->quantity;
+        // $this->quantity = $this->product->quantity;
+        $this->options['image'] = Storage::url($this->product->images->first()->url);
+    }
+
+    public function updatedColorId($value)
+    {
+        $this->quantity = $this->product->colors->find($value)->pivot->quantity;
+    }
+
+    public function decrement()
+    {
+        $this->qty = $this->qty - 1;
+    }
+
+    public function increment()
+    {
+        $this->qty = $this->qty + 1;
+    }
+
+    public function addItem()
+    {
+        Cart::add([
+            'id' => $this->product->id,
+            'name' =>  $this->product->name,
+            'qty' =>  $this->qty,
+            'price' =>  $this->product->price,
+            'weight' => 5,
+            'options' => $this->options,
+        ]);
+
+        $this->emitTo('dropdown-cart', 'render');
     }
 
     public function render()
     {
         return view('livewire.add-cart-item-color');
-    }
-
-    public function updateColorId($value)
-    {
-        $this->quantity = $this->product->colors->find($value)->pivot->quantity;
     }
 }
