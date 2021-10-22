@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -14,6 +15,20 @@ class Product extends Model
     const PUBLICADO = 2;
 
     protected $guarded = [];
+
+
+    //accesores
+
+    public function getStockAttribute()
+    {
+        if ($this->subcategory->color) {
+            return ColorProduct::whereHas('product', function (Builder $query) {
+                $query->where('id', $this->id);
+            })->sum('quantity');
+        } else {
+            return $this->quantity;
+        }
+    }
 
     public function brand()
     {

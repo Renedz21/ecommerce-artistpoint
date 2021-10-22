@@ -1,4 +1,16 @@
 <div x-data>
+
+    <p class="text-gray-700 mb-3">
+        <span class="font-semibold text-lg">
+            Stock:
+            @if ($quantity)
+                {{ $quantity }}
+            @else
+                {{ $product->stock }}
+            @endif
+        </span>
+    </p>
+
     <p class="text-xl text-gray-700">Color</p>
 
     <select wire:model="color_id"
@@ -9,7 +21,7 @@
         @endforeach
     </select>
 
-    <div class="flex">
+    <div class="flex mt-4">
         {{-- <div class="mr-4">
             <x-jet-secondary-button disabled x-bind:disabled='$wire.qty <= 1' wire:loading.attr='disabled'
                 wire:target='decrement' wire:click='decrement'>-
@@ -26,6 +38,9 @@
                 Agregar al carrito
             </x-jet-button>
         </div> --}}
+
+
+
         <div class="mr-4">
             <x-jet-secondary-button disabled x-bind:disabled='$wire.qty <= 1' wire:loading.attr='disabled'
                 wire:target='decrement' wire:click='decrement'>-
@@ -38,10 +53,13 @@
         </div>
         <div class="flex-1">
 
-            <x-jet-button class="w-full text-center justify-center bg-indigo-500" x-bind:disabled='!$wire.quantity'>
+            {{-- <x-jet-button class="w-full text-center justify-center bg-indigo-500" >
+                Agregar al carrito
+            </x-jet-button> --}}
+            <x-jet-button x-bind:disabled='!$wire.quantity' wire:click='addItem' wire:loading.attr='disabled'
+                wire:target='addItem' class="w-full text-center justify-center bg-indigo-500">
                 Agregar al carrito
             </x-jet-button>
-
         </div>
     </div>
 </div>

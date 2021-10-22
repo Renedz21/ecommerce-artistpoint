@@ -28,7 +28,17 @@
 
                         <article class="flex-1">
                             <h1 class="font-bold">{{ $item->name }}</h1>
-                            <p class="">Cant: {{ $item->qty }}</p>
+
+                            <div>
+                                <p class="">Cant: {{ $item->qty }}</p>
+
+                                @isset($item->options['color'])
+                                    <p class="">Color: {{ $item->options['color'] }}</p>
+                                @endisset
+                            </div>
+
+
+
                             <p class="">USD$ {{ $item->price }}</p>
                         </article>
                     </li>

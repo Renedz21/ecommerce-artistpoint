@@ -2,7 +2,7 @@
 
     <p class="text-gray-700 mb-3">
         <span class="font-semibold text-lg">
-            Stock: {{ $product->quantity }}
+            Stock: {{ $quantity }}
         </span>
     </p>
 
@@ -19,8 +19,9 @@
         </div>
         <div class="flex-1">
 
-            <x-jet-button class="w-full text-center justify-center bg-indigo-500" wire:click='addItem'
-                wire:loading.attr='disabled' wire:target='addItem'>
+            <x-jet-button class="w-full text-center justify-center bg-indigo-500"
+                x-bind:disabled="$wire.qty > $wire.quantity" wire:click='addItem' wire:loading.attr='disabled'
+                wire:target='addItem'>
                 Agregar al carrito
             </x-jet-button>
 
