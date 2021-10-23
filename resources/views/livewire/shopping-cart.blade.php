@@ -71,10 +71,10 @@
                     class="px-6 py-2 border rounded-md border-indigo-600 hover:bg-indigo-600 hover:text-white">Seguir
                     <span class="sr-only sm:not-sr-only">comprando</span>
                 </button>
-                <button type="button"
+                <a href="{{ route('orders.create') }}"
                     class="px-6 py-2 border rounded-md bg-indigo-600 text-gray-50 border-indigo-600 hover:bg-indigo-800">
                     <span class="sr-only sm:not-sr-only">Realizar</span> pedido
-                </button>
+                </a>
             </div>
         @else
 
