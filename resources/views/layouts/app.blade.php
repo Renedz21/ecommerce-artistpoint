@@ -23,7 +23,7 @@
     <script src="{{ mix('js/app.js') }}" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.js"></script>
 
-
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 
 </head>

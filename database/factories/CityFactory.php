@@ -22,7 +22,8 @@ class CityFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name' => $this->faker->city(),
+            'cost' => $this->faker->randomElement([5, 10, 15]),
         ];
     }
 }

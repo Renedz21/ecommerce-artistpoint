@@ -8,4 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class District extends Model
 {
     use HasFactory;
+
+    protected $guarded = [];
+
+    public function districts()
+    {
+        return $this->hasMany(District::class);
+    }
+
+    public function orders()
+    {
+        return $this->hasMany(Order::class);
+    }
 }
