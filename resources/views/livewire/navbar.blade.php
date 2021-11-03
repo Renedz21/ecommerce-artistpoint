@@ -69,10 +69,15 @@
 
                             <x-jet-dropdown-link href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            this.closest('form').submit();">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        this.closest('form').submit();">
                                 {{ __('Log Out') }}
                             </x-jet-dropdown-link>
                         </form>
+
+
+                        <x-jet-dropdown-link href="{{ route('show.products') }}">
+                            Administrador
+                        </x-jet-dropdown-link>
                     </x-slot>
                 </x-jet-dropdown>
 
